@@ -30,19 +30,7 @@ class CatList extends Component {
       
       let catList = (array) => {
         return array.map((value, index) => 
-            <div>
-                <Row>
-                    Name: {value.name}
-                </Row>
-                <Row>
-                    Age: {value.age}
-                </Row>
-                <Row>
-                   {value.enjoys}
-                </Row>
-                <hr/>
-            </div>
-            
+            <ListItem name={value.name} age={value.age} enjoys={value.enjoys} key={index}/>
         )
       }
       

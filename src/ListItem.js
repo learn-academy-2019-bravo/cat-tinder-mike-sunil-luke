@@ -14,9 +14,9 @@ class ListItem extends Component {
         
     }
   render(){
-      const {name, age, description} = this.props
+      const {name, age, enjoys} = this.props
       return (
-        <Container>
+        <div>
             <Row>
                 Name: {name}
             </Row>
@@ -24,9 +24,10 @@ class ListItem extends Component {
                 Age: {age}
             </Row>
             <Row>
-               {description}
+               {enjoys}
             </Row>
-        </Container>
+            <hr/>
+        </div>
         );
       }
 }
