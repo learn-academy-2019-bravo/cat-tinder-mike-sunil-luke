@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {Form, Container, Button, Row, Col} from 'react-bootstrap';
 import './App.css';
 
-function App() {
+
+
+class App extends Component {
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Container>
+        <h1 id="catTitle">Cat Tinder</h1>
+          <Row>
+            <Col md={{ span: 6, offset: 3 }}><iframe src="https://giphy.com/embed/oziZPHkpHiayfoVEyA" width="480" height="252" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/EuropeanConsumerCentre-dating-online-consumer-oziZPHkpHiayfoVEyA"></a></p></Col>
+          </Row>
+        <h2> About </h2>
+        <Form>
+          <Row>
+            <Col>
+              <Form.Group controlId="formGroupName">
+                <Form.Label>Name:</Form.Label>
+                <Form.Control type="text" placeholder="Name" />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group controlId="formGroupAge" >
+                <Form.Label>Age:</Form.Label>
+                <Form.Control type="number" min="0" placeholder="Age"  />
+              </Form.Group>
+            </Col>
+          </Row>
+          <Form.Group controlId="formGroupEnjoys">
+            <Form.Label>Enjoys:</Form.Label>
+            <Form.Control as="textarea" rows="3"/>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+          Create Profile
+          </Button>
+        </Form>
+      </Container>
+    );
+  }
 }
 
 export default App;
