@@ -16,7 +16,7 @@ class CatList extends Component {
                     },
                     {id: 2,
                     name: "garfield",
-                    age: 10,
+                    age: 41,
                     enjoys: "eats a lot"
                     },
                     {id: 3,
@@ -28,6 +28,7 @@ class CatList extends Component {
             }
         
     }
+    
   render(){
       const {list} = this.state
       

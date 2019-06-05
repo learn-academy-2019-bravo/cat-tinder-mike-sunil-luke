@@ -25,8 +25,9 @@ class Routes extends Component {
         <Switch>
             <Route path="/CreateCat" component={CreateCat} />
             <Route path="/CatList" component={CatList} />
+            <Route exact path="/" component={Home} />
             <Route path="/Home" component={Home} />
-            <Route path="/MyCat/:id" componenet={MyCat} />
+            <Route path="/MyCat" component={MyCat} />
         </Switch>
     </Router>
     );
