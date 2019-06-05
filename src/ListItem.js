@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import {Container, Row} from 'react-bootstrap'
+import {Row} from 'react-bootstrap'
 
 import './App.css';
-
-
 
 class ListItem extends Component {
     constructor(props){

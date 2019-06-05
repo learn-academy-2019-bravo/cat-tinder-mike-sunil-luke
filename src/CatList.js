@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Row} from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
 import ListItem from './ListItem'
 
 import './App.css';
@@ -9,15 +9,18 @@ class CatList extends Component {
         super(props);
             this.state = {
                 list: [
-                    {name: "frodo",
+                    {id: 1,
+                    name: "frodo",
                     age: 4,
                     enjoys: "cool dude"
                     },
-                    {name: "garfield",
+                    {id: 2,
+                    name: "garfield",
                     age: 10,
                     enjoys: "eats a lot"
                     },
-                    {name: "tom",
+                    {id: 3,
+                    name: "tom",
                     age: 20,
                     enjoys: "jerry's friend"
                     },
@@ -30,7 +33,7 @@ class CatList extends Component {
       
       let catList = (array) => {
         return array.map((value, index) => 
-            <ListItem name={value.name} age={value.age} enjoys={value.enjoys} key={index}/>
+            <ListItem name={value.name} age={value.age} enjoys={value.enjoys} key={value.id}/>
         )
       }
       
