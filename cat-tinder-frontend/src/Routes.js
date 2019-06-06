@@ -17,7 +17,7 @@ class Routes extends Component {
         <Navbar bg="primary" variant="dark">
         <Navbar.Brand href="Home">Home</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="CreateCat">Cat Profile</Nav.Link>
+              <Nav.Link href="CreateCat">Create Profile</Nav.Link>
               <Nav.Link href="CatList">Cat List</Nav.Link>
               <Nav.Link href="MyCat">My Cat</Nav.Link>
             </Nav>            

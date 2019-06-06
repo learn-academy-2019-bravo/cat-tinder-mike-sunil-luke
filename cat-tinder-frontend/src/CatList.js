@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container} from 'react-bootstrap'
+import {Container, Button, Row, Col} from 'react-bootstrap'
 import ListItem from './ListItem'
 
 import './App.css';
@@ -24,13 +24,29 @@ class CatList extends Component {
                     age: 20,
                     enjoys: "jerry's friend"
                     },
-                    ]
+                    {id: 4,
+                    name: "Sylvestor",
+                    age: 5,
+                    enjoys: "Makes best burgers"
+                    },
+                    {id: 5,
+                    name: "Tony",
+                    age: 35,
+                    enjoys: "Breakfast is good"
+                    },
+                    ],
+                left: [],
+                right: [],
+                count: 0,
             }
+            
         
     }
     
+    
+    
   render(){
-      const {list} = this.state
+      const {list, count, left, right} = this.state
       
       let catList = (array) => {
         return array.map((value, index) => 
@@ -39,9 +55,51 @@ class CatList extends Component {
       }
       
       const profiles = catList(list)
+      
+      let aRender = () => {
+        if (typeof profiles[count] != "undefined") {
+            return profiles[count]
+        }
+        else {
+           return <h2>Out of profiles</h2>
+        }
+      }
+      
+      let counter = () => {
+          this.setState({count: count+1})
+      }
+      
+      let leftClick = () => {
+          counter()
+          if (typeof profiles[count] != "undefined") {
+            left.push(profiles[count])
+            }
+          this.setState({left})
+          
+      }
+      let rightClick = () => {
+          counter()
+          if (typeof profiles[count] != "undefined") {
+            right.push(profiles[count])
+            }
+          this.setState({right})
+      }
+      console.log(right)
       return (
         <Container>
-            {profiles}
+            {aRender()}
+            <Button variant="danger" onClick={leftClick} > Swipe Left </Button>
+            <Button variant="success" onClick={rightClick} > Swipe Right </Button>
+            <Row>
+                <Col> 
+                    <h2>Rejected:</h2>
+                    <div>{left}</div>
+                </Col>
+                <Col> 
+                    <h2>Likes:</h2>
+                    <div>{right}</div>
+                </Col>
+            </Row>
         </Container>
         );
   }
