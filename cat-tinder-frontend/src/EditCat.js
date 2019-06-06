@@ -20,13 +20,14 @@ class EditCat extends Component {
   
 
   handleSearch = () => {
-      let {id} = this.state.form
+    let {id} = this.state
     this.props.handleSearch(id)
   } 
     
   render(){
       const {cats} = this.props
       const {id} = this.state
+      console.log(id)
       return (
          <Container>
           <Form>
