@@ -8,33 +8,33 @@ class CatList extends Component {
     constructor(props){
         super(props);
             this.state = {
-                list: [
-                    {id: 1,
-                    name: "frodo",
-                    age: 4,
-                    enjoys: "cool dude"
-                    },
-                    {id: 2,
-                    name: "garfield",
-                    age: 41,
-                    enjoys: "eats a lot"
-                    },
-                    {id: 3,
-                    name: "tom",
-                    age: 20,
-                    enjoys: "jerry's friend"
-                    },
-                    {id: 4,
-                    name: "Sylvestor",
-                    age: 5,
-                    enjoys: "Makes best burgers"
-                    },
-                    {id: 5,
-                    name: "Tony",
-                    age: 35,
-                    enjoys: "Breakfast is good"
-                    },
-                    ],
+                // list: [
+                //     {id: 1,
+                //     name: "frodo",
+                //     age: 4,
+                //     enjoys: "cool dude"
+                //     },
+                //     {id: 2,
+                //     name: "garfield",
+                //     age: 41,
+                //     enjoys: "eats a lot"
+                //     },
+                //     {id: 3,
+                //     name: "tom",
+                //     age: 20,
+                //     enjoys: "jerry's friend"
+                //     },
+                //     {id: 4,
+                //     name: "Sylvestor",
+                //     age: 5,
+                //     enjoys: "Makes best burgers"
+                //     },
+                //     {id: 5,
+                //     name: "Tony",
+                //     age: 35,
+                //     enjoys: "Breakfast is good"
+                //     },
+                //     ],
                 left: [],
                 right: [],
                 count: 0,
@@ -46,7 +46,8 @@ class CatList extends Component {
     
     
   render(){
-      const {list, count, left, right} = this.state
+      const {count, left, right} = this.state
+      const {cats} = this.props
       
       let catList = (array) => {
         return array.map((value, index) => 
@@ -54,7 +55,7 @@ class CatList extends Component {
         )
       }
       
-      const profiles = catList(list)
+      const profiles = catList(cats)
       
       let aRender = () => {
         if (typeof profiles[count] != "undefined") {
@@ -84,7 +85,6 @@ class CatList extends Component {
             }
           this.setState({right})
       }
-      console.log(right)
       return (
         <Container>
             {aRender()}

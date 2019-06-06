@@ -4,7 +4,7 @@ import {Navbar, Nav} from 'react-bootstrap'
 import CreateCat from './CreateCat'
 import CatList from './CatList'
 import Home from './Home'
-import MyCat from './MyCat'
+import EditCat from './EditCat'
 
 import './App.css';
 
@@ -12,6 +12,7 @@ import './App.css';
 
 class Routes extends Component {
   render(){
+    const {cats, handleNewCat, handleSearch} = this.props
   return (
     <Router>
         <Navbar bg="primary" variant="dark">
@@ -19,15 +20,15 @@ class Routes extends Component {
             <Nav className="mr-auto">
               <Nav.Link href="CreateCat">Create Profile</Nav.Link>
               <Nav.Link href="CatList">Cat List</Nav.Link>
-              <Nav.Link href="MyCat">My Cat</Nav.Link>
+              <Nav.Link href="EditCat">Edit Cat</Nav.Link>
             </Nav>            
         </Navbar>
         <Switch>
-            <Route path="/CreateCat" component={CreateCat} />
-            <Route path="/CatList" component={CatList} />
+            <Route path="/CreateCat" render={(props) => <CreateCat {...props} handleNewCat={handleNewCat} />} />
+            <Route path="/CatList" render={(props) => <CatList {...props} cats={cats} />} />
             <Route exact path="/" component={Home} />
             <Route path="/Home" component={Home} />
-            <Route path="/MyCat" component={MyCat} />
+            <Route path="/EditCat" render={(props) => <EditCat {...props} cats={cats} handleSearch={handleSearch} />} />
         </Switch>
     </Router>
     );
