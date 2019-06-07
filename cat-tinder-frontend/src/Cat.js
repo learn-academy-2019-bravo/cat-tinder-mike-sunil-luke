@@ -3,7 +3,7 @@ import {Row} from 'react-bootstrap'
 
 import './App.css';
 
-class ListItem extends Component {
+class Cat extends Component {
     constructor(props){
         super(props);
             this.state = {
@@ -30,4 +30,4 @@ class ListItem extends Component {
       }
 }
 
-export default ListItem;
+export default Cat;

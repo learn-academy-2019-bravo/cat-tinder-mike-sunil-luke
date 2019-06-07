@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Container, Form, Button} from 'react-bootstrap'
-import ListItem from './ListItem'
+import Cat from './Cat'
 
 
 import './App.css';
@@ -39,7 +39,7 @@ class EditCat extends Component {
               Search
               </Button>
           
-          <ListItem name={cat.name} age={cat.age} enjoys={cat.enjoys} key={cat.id}/>
+          <Cat name={cat.name} age={cat.age} enjoys={cat.enjoys} key={cat.id}/>
         </Container>
     )
       

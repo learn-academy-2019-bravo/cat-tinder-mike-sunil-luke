@@ -18,7 +18,13 @@ class CatsController < ApplicationController
         render json: cat
     end
     
+    def update
+        @cat = cat.find(params[:id]) #probably would be current_cat for you
+        @cat.update_attributes(cat_params)
+        render :show
+    end
+    
     def cat_params
-        params.require(:cat).permit(:name, :age, :enjoys)
+        params.require(:cat).permit(:name, :age, :enjoys, :avatar)
     end
 end

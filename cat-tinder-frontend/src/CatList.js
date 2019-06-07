@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Container, Button, Row, Col} from 'react-bootstrap'
-import ListItem from './ListItem'
+import Cat from './Cat'
 
 import './App.css';
 
@@ -51,7 +51,7 @@ class CatList extends Component {
       
       let catList = (array) => {
         return array.map((value, index) => 
-            <ListItem name={value.name} age={value.age} enjoys={value.enjoys} key={value.id}/>
+            <Cat name={value.name} age={value.age} enjoys={value.enjoys} key={value.id}/>
         )
       }
       
