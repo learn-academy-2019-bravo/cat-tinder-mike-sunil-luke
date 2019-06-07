@@ -61,7 +61,7 @@ class CreateCat extends Component {
           </Button>
         </Form>
          {this.props.success &&
-		      <Redirect to="/cats" /> }
+		      <Redirect to="/CatList" /> }
       </Container>
     );
   }

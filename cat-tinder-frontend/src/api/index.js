@@ -1,5 +1,5 @@
 // the address of our rails backend, saved as a constant value, because we never want to accidentally change it
-const BASE = 'http://18.218.215.229:3000'
+const BASE = 'http://3.18.109.68:3000'
 
 let getCats = function() {
 // the function name getCats is intended to remind you of the restful rails route --> GET '/cats'.
@@ -26,6 +26,21 @@ let createCat = function(cat) {
 			return json
 		})
 }
+
+let searchCat = function(id) {
+	return fetch(BASE + `/cats/${id}`, {
+		headers: { 
+			'Content-Type': 'application/json'
+		},
+		method: "GET"
+	})
+		.then((resp) => {
+            let json = resp.json()
+			return json
+		})
+}
+
+
 export {
-    getCats, createCat
+    getCats, createCat, searchCat
 }

@@ -13,6 +13,10 @@ class CatsController < ApplicationController
         end
     end
     
+    def show
+        cat = Cat.find(params["id"])
+        render json: cat
+    end
     
     def cat_params
         params.require(:cat).permit(:name, :age, :enjoys)

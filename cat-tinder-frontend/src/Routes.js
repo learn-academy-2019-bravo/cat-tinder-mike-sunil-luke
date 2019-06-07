@@ -12,7 +12,7 @@ import './App.css';
 
 class Routes extends Component {
   render(){
-    const {cats, handleNewCat, handleSearch} = this.props
+    const {cats, handleNewCat, handleSearch, cat} = this.props
   return (
     <Router>
         <Navbar bg="primary" variant="dark">
@@ -28,7 +28,7 @@ class Routes extends Component {
             <Route path="/CatList" render={(props) => <CatList {...props} cats={cats} />} />
             <Route exact path="/" component={Home} />
             <Route path="/Home" component={Home} />
-            <Route path="/EditCat" render={(props) => <EditCat {...props} cats={cats} handleSearch={handleSearch} />} />
+            <Route path="/EditCat" render={(props) => <EditCat {...props} cat={cat} handleSearch={handleSearch} />} />
         </Switch>
     </Router>
     );

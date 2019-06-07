@@ -22,7 +22,7 @@ class ListItem extends Component {
                 Age: {age}
             </Row>
             <Row>
-               {enjoys}
+               Enjoys: {enjoys}
             </Row>
             <hr/>
         </div>
