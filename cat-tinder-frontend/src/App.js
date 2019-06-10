@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import './App.css';
-import { getCats, createCat, searchCat } from './api'
+import { getCats, createCat, searchCat,updateCat } from './api'
 
 import Routes from './Routes'
 
@@ -40,10 +40,12 @@ class App extends Component {
       })
   }
   
-
+  handleUpdatesCat = (updatedInfo, id) => {
+    updateCat(updatedInfo, id)
+  }
   render(){
     const {cats, cat} = this.state
-    console.log(cat)
+
   return (
       <Container>
         <h1 id="catTitle">Cat Tinder</h1>
@@ -55,6 +57,7 @@ class App extends Component {
             cat={cat} 
             handleNewCat={this.handleNewCat} 
             handleSearch={this.handleSearch}
+            handleUpdatesCat={this.handleUpdatesCat}
           />
       </Container>
     );

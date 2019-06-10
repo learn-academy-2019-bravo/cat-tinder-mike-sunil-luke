@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Form, Container, Button, Row, Col} from 'react-bootstrap';
 import {Redirect} from 'react-router-dom'
-import Catvatar from './Catvatar'
+
 import './App.css';
 
 
@@ -29,7 +29,6 @@ class CreateCat extends Component {
   }
   
   render(){
-    const {form} = this.state
     const {name, age, enjoys} = this.state.form
   return (
       <Container>
@@ -61,14 +60,11 @@ class CreateCat extends Component {
                 <Form.Control as="textarea" rows="3" name="enjoys" onChange={this.handleChange} value={enjoys} />
               </Form.Group>
             </Col>
-            <Col>
-              <Form.Label>Upload Catvatar:</Form.Label>
-              <Catvatar cat={form}/>
-            </Col>
           </Row>
           <Button variant="primary" type="submit" onClick={this.handleNewCat}>
           Create Profile
           </Button>
+          
         </Form>
          {this.props.success &&
 		      <Redirect to="/CatList" /> }

@@ -50,7 +50,7 @@ class CatList extends Component {
       const {cats} = this.props
       
       let catList = (array) => {
-        return array.map((value, index) => 
+        return array.map((value) => 
             <Cat name={value.name} age={value.age} enjoys={value.enjoys} key={value.id}/>
         )
       }
